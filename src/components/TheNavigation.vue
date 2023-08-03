@@ -1,5 +1,4 @@
 <script setup>
-// import { RouterLink } from 'vue-router'
 import AppLink from './AppLink.vue'
 import sourceData from '@/data/index.json'
 </script>

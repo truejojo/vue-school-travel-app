@@ -1,25 +1,21 @@
-<script>
-  export default {
-    data() {
-      return {
-        username: window.user
-      }
-    },
-    methods: {
-      logout() {
-        window.user = null
-        // this.$router.push('/')
-        this.$router.push({name:"home"})
-      }
-    }
-  }
+<script setup>
+import { useRouter } from 'vue-router'
+
+const username = window.user
+const router = useRouter()
+
+const logout = () => {
+  window.user = null
+  // this.$router.push('/')
+  router.push({ name: 'home' })
+}
 </script>
 
 <template>
   <div>
-    <h1>Greetings, {{username}}</h1>
+    <h1>Greetings, {{ username }}</h1>
     <button @click="logout">Logout</button>
-    <RouterLink :to="{name: 'invoices'}">
+    <RouterLink :to="{ name: 'invoices' }">
       <button>Invoices</button>
     </RouterLink>
   </div>

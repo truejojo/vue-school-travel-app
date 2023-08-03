@@ -1,26 +1,19 @@
-<script>
+<script setup>
+import { computed } from 'vue'
 import sourceData from '@/data/index.json'
 import ExperienceCard from '@/components/ExperienceCard.vue'
 import GoBack from '@/components/GoBack.vue'
 
-export default {
-  components: {
-    ExperienceCard, GoBack
-  },
-
-  props: {
-    id: {
-      type: Number,
-      required: true
-    }
-  },
-
-  computed: {
-    destination() {
-      return sourceData.destinations.find((destination) => destination.id === this.id)
-    }
+const props = defineProps({
+  id: {
+    type: Number,
+    required: true
   }
-}
+})
+
+const destination = computed(() =>
+  sourceData.destinations.find((destination) => destination.id === props.id)
+)
 </script>
 
 <template>

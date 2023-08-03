@@ -1,7 +1,8 @@
 <script setup>
-import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
 import sourceData from '@/data/index.json'
+
 const destinations = ref(sourceData.destinations)
 </script>
 
